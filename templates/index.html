@@ -196,68 +196,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-    <script type="text/javascript">
-        // Validate the form
-        jQuery().ready(function() {
-            var validateForm = jQuery("#invoiceData").validate({
-                rules: {
-                    toFirstName: {
-                        required: true,
-                        minlength: 4,
-                        maxlength: 20
-                    },
-                    toLastName: {
-                        required: true,
-                        minlength: 4,
-                        maxlength: 20
-                    }
-                },
-                errorElement: "span",
-                errorClass: "help-inline",
-            });
-
-            // Binding previous and next event and form submission
-            // Binding next button on first step
-            $(".open1").click(function() {
-                if(validateForm.form()) {
-                    $(".frm").hide("fast");
-                    $("#step2").show("slow");
-                }
-            });
-
-            // Binding next button on second step
-            $(".open2").click(function() {
-                if(validateForm.form()) {
-                    $(".frm").hide("fast");
-                    $("#step3").show("slow");
-                }
-            });
-
-             // Binding back button on second step
-            $(".back2").click(function() {
-                $(".frm").hide("fast");
-                $("#step1").show("slow");
-            });
- 
-            // Binding back button on third step
-            $(".back3").click(function() {
-                $(".frm").hide("fast");
-                $("#step2").show("slow");
-            });
-    
-            $(".open3").click(function() {
-                if (validateForm.form()) {
-                    // optional
-                    // used delay form submission for a seccond and show a loader image
-                    $("#loader").show();
-                    setTimeout(function(){
-                        $("#basicform").html('<h2>Your Data have been submitted.</h2>');
-                    }, 1000);
-                    
-                    return false;
-                }
-            });
-        });
-    </script>
+    <script src="../assets/main.js"></script>
   </body>
 </html>
