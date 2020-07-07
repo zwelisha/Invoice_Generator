@@ -45,7 +45,7 @@ $(document).ready(function() {
         $("#step2").show("slow");
     });
 
-    var server = "http://localhost:5000";
+    var apiUrl = "/api/send_email";
     var invoiceData = {
         toFirstName: $('#toFirstName').val(),
         toLastName: $('#toLastName').val(),
