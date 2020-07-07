@@ -1,6 +1,5 @@
-// Validate the form
-jQuery().ready(function() {
-    var validateForm = jQuery("#invoiceData").validate({
+$(document).ready(function() {
+    var validateForm = $("#invoiceData").validate({
         rules: {
             toFirstName: {
                 required: true,
@@ -46,26 +45,50 @@ jQuery().ready(function() {
         $("#step2").show("slow");
     });
 
-    var server = "http://localhost:5000";
-    var total = 0;
+    var apiUrl = "/api/send_email";
+    var invoiceData = {
+        toFirstName: $('#toFirstName').val(),
+        toLastName: $('#toLastName').val(),
+        companyName: $('#companyName').val(),
+        companyAddress: $('companyAddress').val(),
+        sentDate: $('#sentDate').val(),
+        toEmail: $('#toEmail').val(),
+        fromFirstName: $('#fromFirstName').val(),
+        fromLastName: $('#fromLastName').val(),
+        fromEmail: $('#fromEmail').val(),
+        password: $('#password').val(),
+        bankName: $('#bankName').val(),
+        accNumber: $('#accNumber').val(),
+        reference: $('#reference').val(),
+        dailyRate: $('#dailyRate').val(),
+        quantity: $('#quantity').val(),
+        description: $('#description').val(),
+        startedOn: $('#started').val(),
+        completedOn: $('#completed').val(),
+    };
 
-    $(".open3").click(function() {
-        if (validateForm.form()) {
-            // optional
-            // used delay form submission for a seccond and show a loader image
-            $("#loader").show();
-            setTimeout(function(){
-                $("#basicform").html('<h2>Your Data have been submitted.</h2>');
-            }, 1000);
-            
-            $.ajax({
-                type: "POST",
-                url: server,
-                data: JSON.stringify(),
-                dataType: 'json'
-            }).done(function(data){
-                console.log(data);
-            });
-        }
+    invoiceData['total'] = invoiceData.dailyRate * invoiceData.quantity;
+
+    $(function() {
+        
+        $(".open3").click(function() {
+            if (validateForm.form()) {
+                // optional
+                // used delay form submission for a seccond and show a loader image
+                $("#loader").show();
+                setTimeout(function(){
+                    $("#invoiceData").html('<div class="alert alert-success"><strong>Success!</strong> Your data have successfully been sent.</div>');
+                }, 1000);
+                
+                $.ajax({
+                    type: "POST",
+                    url: server,
+                    data: JSON.stringify(invoiceData),
+                    dataType: 'json'
+                }).done(function(data){
+                    console.log(data);
+                });
+            }
+        });
     });
 });
