@@ -1,36 +1,40 @@
 $(document).ready(function() {
-    var validateForm = $("#invoiceData").validate({
-        rules: {
-            toFirstName: {
-                required: true,
-                minlength: 4,
-                maxlength: 20
-            },
-            toLastName: {
-                required: true,
-                minlength: 4,
-                maxlength: 20
-            }
-        },
-        errorElement: "span",
-        errorClass: "help-inline",
-    });
+    // var validateForm = $("#invoiceData").validate({
+    //     rules: {
+    //         toFirstName: {
+    //             required: true,
+    //             minlength: 4,
+    //             maxlength: 20
+    //         },
+    //         toLastName: {
+    //             required: true,
+    //             minlength: 4,
+    //             maxlength: 20
+    //         }
+    //     },
+    //     errorElement: "span",
+    //     errorClass: "help-inline",
+    // });
 
     // Binding previous and next event and form submission
     // Binding next button on first step
     $(".open1").click(function() {
-        if(validateForm.form()) {
-            $(".frm").hide("fast");
-            $("#step2").show("slow");
-        }
+        // if(validateForm.form()) {
+        //     $(".frm").hide("fast");
+        //     $("#step2").show("slow");
+        // }
+        $(".frm").hide("fast");
+        $("#step2").show("slow");
     });
 
     // Binding next button on second step
     $(".open2").click(function() {
-        if(validateForm.form()) {
-            $(".frm").hide("fast");
-            $("#step3").show("slow");
-        }
+        // if(validateForm.form()) {
+        //     $(".frm").hide("fast");
+        //     $("#step3").show("slow");
+        // }
+        $(".frm").hide("fast");
+        $("#step3").show("slow");
     });
 
      // Binding back button on second step
