@@ -1,1 +1,15 @@
 .required{color: #F00;}
+
+.card {
+    width: 60%;
+    margin: 1.5em auto;
+}
+
+.card-title {
+    text-align: center;
+    color: #333;
+}
+
+.personal-details, .service-info {
+    display: none;
+}
