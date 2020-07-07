@@ -12,178 +12,152 @@
   </head>
   <body>
     <div class="container">
-        <form name="invoiceData" id="invoiceData" method="post">
-            <div class="company-details frm" id="step1">
-                <fieldset>
-                    <legend>Company Details</legend>
-        
-                    <div class="form-group">
-                        <label class="col-lg-2 control-label" for="toFirstName">To First Name: </label>
-                        <div class="col-lg-6">
-                            <input type="text" placeholder="Name of the person to recieve.." id="toFirstName" name="tofirstname" class="form-control" autocomplete="off">
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="col-lg-2 control-label" for="toLastName">To Surname: </label>
-                        <div class="col-lg-6">
-                            <input type="text" placeholder="Surname of the person to recieve.." id="toLastName" name="tolastname" class="form-control" autocomplete="off">
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="col-lg-2 control-label" for="companyName">Company Name: </label>
-                        <div class="col-lg-6">
-                            <input type="text" placeholder="Name of the company.." id="companyName" name="companyname" class="form-control" autocomplete="off">
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="col-lg-2 control-label" for="companyAddress">Comany Address: </label>
-                        <div class="col-lg-6">
-                            <textarea placeholder="Address of a company.." id="companyAdress" name="companyaddress" class="form-control" autocomplete="off"></textarea>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="col-lg-2 control-label" for="sentDate">Sent Date: </label>
-                        <div class="col-lg-6">
-                            <input type="date" placeholder="Date you sent the invoice.." id="sentDate" name="sentdate" class="form-control" autocomplete="off">
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="col-lg-2 control-label" for="toEmail">To Email: </label>
-                        <div class="col-lg-6">
-                            <input type="email" placeholder="Email of the person to recieve.." id="toEmail" name="toemail" class="form-control" autocomplete="off">
-                        </div>
-                    </div>
-        
-                    <div class="form-group">
-                        <div class="col-lg-10 col-lg-offset-2">
-                            <button class="btn btn-primary open1" type="button">Next <span class="fa fa-arrow-right"></span></button> 
-                        </div>
-                    </div>
+        <div class="card card-body">
+            <h1 class="card-title">Invoice Generator</h1>
+            <div class="form-outer">
+                <form name="invoiceData" id="invoiceData" method="post">
+                    <div class="company-details frm" id="step1">
+                        <fieldset>
+                            <legend class="page">Company Details</legend>
                 
-                </fieldset>
+                            <div class="form-group">
+                                <label class="control-label" for="toFirstName">To First Name: </label>
+                                <input type="text" placeholder="Name of the person to recieve.." id="toFirstName" name="tofirstname" class="form-control" autocomplete="off">
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label" for="toLastName">To Surname: </label>
+                                <input type="text" placeholder="Surname of the person to recieve.." id="toLastName" name="tolastname" class="form-control" autocomplete="off">
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label" for="companyName">Company Name: </label>
+                                <input type="text" placeholder="Name of the company.." id="companyName" name="companyname" class="form-control" autocomplete="off">
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label" for="companyAddress">Company Address: </label>
+                                <textarea placeholder="Address of a company.." id="companyAdress" name="companyaddress" class="form-control" autocomplete="off"></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label" for="sentDate">Sent Date: </label>
+                                <input type="date" placeholder="Date you sent the invoice.." id="sentDate" name="sentdate" class="form-control" autocomplete="off">
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label" for="toEmail">To Email: </label>
+                                <input type="email" placeholder="Email of the person to recieve.." id="toEmail" name="toemail" class="form-control" autocomplete="off">
+                            </div>
+                
+                            <div class="form-group">
+                                <button class="btn btn-primary open1" type="button">Next <span class="fa fa-arrow-right"></span></button> 
+                            </div>
+                        
+                        </fieldset>
+                    </div>
+
+                    <div class="personal-details frm" id="step2">
+                        <fieldset>
+                            <legend class="page">Personal Details</legend>
+                
+                            <div class="form-group">
+                                <label class="control-label" for="fromFirstName">Your First Name: </label>
+                                <input type="text" placeholder="Your First Name" id="fromFirstName" name="fromfirstname" class="form-control" autocomplete="off">
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label" for="fromLastName">Your Surname: </label>
+                                <input type="text" placeholder="Your Surname" id="fromLastName" name="fromlastname" class="form-control" autocomplete="off">
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label" for="fromEmail">Your Email: </label>
+                                <input type="email" placeholder="Your Email Address" id="fromEmail" name="fromemail" class="form-control" autocomplete="off">
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label" for="password">Email Password: </label>
+                                <input type="password" placeholder="Your email password" id="password" name="password" class="form-control" autocomplete="off">
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label" for="bankName">Bank Name: </label>
+                                <input type="text" placeholder="Name of bank you use" id="bankName" name="bankname" class="form-control" autocomplete="off">
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label" for="accNumber">Account Number: </label>
+                                <input type="text" placeholder="Your bank account" id="accNumber" name="accnumber" class="form-control" autocomplete="off">
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label" for="reference">Reference: </label>
+                                <input type="text" placeholder="Reference" id="reference" name="reference" class="form-control" autocomplete="off">
+                            </div>
+                
+                            <div class="clearfix" style="height: 10px;clear: both;"></div>
+                
+                            <div class="form-group">
+                                <button class="btn btn-warning back2" type="button"><span class="fa fa-arrow-left"></span> Back</button> 
+                                
+                                <button class="btn btn-primary open2" type="button">Next <span class="fa fa-arrow-right"></span></button> 
+                            </div>
+                        </fieldset>
+                    </div>
+
+                    <div class="service-info frm" id="step3">
+                        <fieldset>
+                            <legend class="page">Service Details</legend>
+                        
+                            <div class="form-group">
+                                <label class="control-label" for="dailyRate">Daily Rate: </label>
+                                <div class="col-lg-6">
+                                    <input type="number" placeholder="Daily rate" id="dailyRate" name="dailyrate" class="form-control" autocomplete="off">
+                                </div>
+                            </div>
+                        
+                            <div class="form-group">
+                                <label class="control-label" for="quantity">Quantity: </label>
+                                <div class="col-lg-6">
+                                    <input type="number" placeholder="Number of days worked" id="quantity" name="quantity" class="form-control" autocomplete="off">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label" for="description">Description: </label>
+                                <div class="col-lg-6">
+                                    <textarea placeholder="Description of service rendered" id="descriptions" name="description" class="form-control" autocomplete="off"></textarea>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label" for="started">Started On: </label>
+                                <div class="col-lg-6">
+                                    <input type="date" placeholder="Day started" id="started" name="started" class="form-control" autocomplete="off">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label" for="completed">Completed On: </label>
+                                <div class="col-lg-6">
+                                    <input type="date" placeholder="Day completed" id="completed" name="completed" class="form-control" autocomplete="off">
+                                </div>
+                            </div>
+                        
+                            <div class="form-group">
+                                <div class="col-lg-10 col-lg-offset-2">
+                                    <button class="btn btn-warning back3" type="button"><span class="fa fa-arrow-left"></span> Back</button> 
+                                    
+                                    <button class="btn btn-primary open3" type="button">Submit </button> 
+                                    <img src="{{ url_for('static', filename='img/spinner.gif') }}" alt="" id="loader" style="display: none">
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                </form>
             </div>
-
-            <div class="personal-details frm" id="step2">
-                <fieldset>
-                    <legend>Personal Details</legend>
-        
-                    <div class="form-group">
-                        <label class="col-lg-2 control-label" for="fromFirstName">Your First Name: </label>
-                        <div class="col-lg-6">
-                            <input type="text" placeholder="Your First Name" id="fromFirstName" name="fromfirstname" class="form-control" autocomplete="off">
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="col-lg-2 control-label" for="fromLastName">Your Surname: </label>
-                        <div class="col-lg-6">
-                            <input type="text" placeholder="Your Surname" id="fromLastName" name="fromlastname" class="form-control" autocomplete="off">
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="col-lg-2 control-label" for="fromEmail">Your Email: </label>
-                        <div class="col-lg-6">
-                            <input type="email" placeholder="Your Email Address" id="fromEmail" name="fromemail" class="form-control" autocomplete="off">
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="col-lg-2 control-label" for="password">Email Password: </label>
-                        <div class="col-lg-6">
-                            <input type="password" placeholder="Your email password" id="password" name="password" class="form-control" autocomplete="off">
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="col-lg-2 control-label" for="bankName">Bank Name: </label>
-                        <div class="col-lg-6">
-                            <input type="text" placeholder="Name of bank you use" id="bankName" name="bankname" class="form-control" autocomplete="off">
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="col-lg-2 control-label" for="accNumber">Account Number: </label>
-                        <div class="col-lg-6">
-                            <input type="text" placeholder="Your bank account" id="accNumber" name="accnumber" class="form-control" autocomplete="off">
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="col-lg-2 control-label" for="reference">Reference: </label>
-                        <div class="col-lg-6">
-                            <input type="text" placeholder="Reference" id="reference" name="reference" class="form-control" autocomplete="off">
-                        </div>
-                    </div>
-        
-                    <div class="clearfix" style="height: 10px;clear: both;"></div>
-        
-                    <div class="form-group">
-                        <div class="col-lg-10 col-lg-offset-2">
-                            <!-- back2 unique class name  -->
-                            <button class="btn btn-warning back2" type="button"><span class="fa fa-arrow-left"></span> Back</button> 
-                            <!-- open2 unique class name -->
-                            <button class="btn btn-primary open2" type="button">Next <span class="fa fa-arrow-right"></span></button> 
-                        </div>
-                    </div>
-                </fieldset>
-            </div>
-
-            <div class="service-info frm" id="step3">
-                <fieldset>
-                    <legend>Service Details</legend>
-                
-                    <div class="form-group">
-                        <label class="col-lg-2 control-label" for="dailyRate">Daily Rate: </label>
-                        <div class="col-lg-6">
-                            <input type="number" placeholder="Daily rate" id="dailyRate" name="dailyrate" class="form-control" autocomplete="off">
-                        </div>
-                    </div>
-                
-                    <div class="form-group">
-                        <label class="col-lg-2 control-label" for="quantity">Quantity: </label>
-                        <div class="col-lg-6">
-                            <input type="number" placeholder="Number of days worked" id="quantity" name="quantity" class="form-control" autocomplete="off">
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="col-lg-2 control-label" for="description">Description: </label>
-                        <div class="col-lg-6">
-                            <textarea placeholder="Description of service rendered" id="descriptions" name="description" class="form-control" autocomplete="off"></textarea>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="col-lg-2 control-label" for="started">Started On: </label>
-                        <div class="col-lg-6">
-                            <input type="date" placeholder="Day started" id="started" name="started" class="form-control" autocomplete="off">
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="col-lg-2 control-label" for="completed">Completed On: </label>
-                        <div class="col-lg-6">
-                            <input type="date" placeholder="Day completed" id="completed" name="completed" class="form-control" autocomplete="off">
-                        </div>
-                    </div>
-                
-                    <div class="form-group">
-                        <div class="col-lg-10 col-lg-offset-2">
-                            <button class="btn btn-warning back3" type="button"><span class="fa fa-arrow-left"></span> Back</button> 
-                            
-                            <button class="btn btn-primary open3" type="button">Submit </button> 
-                            <img src="{{ url_for('static', filename='img/spinner.gif') }}" alt="" id="loader" style="display: none">
-                        </div>
-                    </div>
-                </fieldset>
-            </div>
-        </form>
+        </div>
     </div>
 
     <!-- Optional JavaScript -->
