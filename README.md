@@ -32,7 +32,8 @@ In addition, consider the details of the invoice sender.
 ## Requirements
 1. flask
 2. python3
-3. pip
+3. pip or pip3
+4. gunicorn
 
 ## Setup
 ### 1. Clone Repo
@@ -45,14 +46,18 @@ https://github.com/zwelisha/Invoice_Generator.git
 python3 -m venv invoice_env
 ```
 
-### 3. Install flask on your virtual env (invoice_env)
-cd into your projects folder and run run the following commands\
+### 3. Install requirements on your virtual env (invoice_env)
+cd into your projects folder and run run the following commands
 ```
 source invoice_env/bin/activate
 ```
 
 ```
-pip install flask
+pip install -r requirements.txt
+```
+OR (if you are using pip3)
+```
+pip3 install -r requirements.txt
 ```
 
 ### 4. Running the app
