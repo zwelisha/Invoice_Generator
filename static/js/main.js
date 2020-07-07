@@ -75,8 +75,10 @@ $(document).ready(function() {
         
     // };
     // Test API call
-    $("#sendDataBtn").click(function() {
+    $('#sendDataBtn').click(function() {
+        console.log("API call button clicked");
         var apiUrl = "/api/send_email";
+        console.log(apiUrl);
         var invoiceData = {
             toFirstName: 'Adriano',
             toLastName: 'Iorio',
@@ -104,7 +106,7 @@ $(document).ready(function() {
             // setTimeout(function(){
             //     $("#invoiceData").html('<div class="alert alert-success"><strong>Success!</strong> Your data have successfully been sent.</div>');
             // }, 1000);
-            
+        console.log(invoiceData);
         $.ajax({
             type: "POST",
             url: apiUrl,
