@@ -12,7 +12,9 @@ def invoice():
 @app.route('/api/send_email', methods=['POST'])
 def api_send_email():
     response = request.get_json()
+    print("Api got called, here is the data passed =>")
     print(response)
+    print("End of Api call data")
     return jsonify(response)
 
 if __name__ == '__main__':
