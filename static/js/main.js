@@ -45,7 +45,8 @@ $(document).ready(function() {
         $("#step2").show("slow");
     });
 
-    var server = "http://localhost:5000";
+    // var server = "http://localhost:5000";
+    var apiUrl = "/api/send_email"
     var invoiceData = {
         toFirstName: $('#toFirstName').val(),
         toLastName: $('#toLastName').val(),
@@ -82,7 +83,7 @@ $(document).ready(function() {
                 
                 $.ajax({
                     type: "POST",
-                    url: server,
+                    url: apiUrl,
                     data: JSON.stringify(invoiceData),
                     dataType: 'json'
                 }).done(function(data){
