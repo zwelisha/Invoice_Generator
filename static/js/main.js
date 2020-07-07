@@ -41,9 +41,9 @@ $(document).ready(function() {
         $("#step2").show("slow");
     });
 
-    var apiUrl = "http://127.0.0.1:5000/api/send_email";
+    var apiUrl = "/api/send_email";
     var invoiceData = {
-        'toFirstName': $('input[name=tofirstname]').val(),
+        'toFirstName': $('#toFirstName').val(),
         'toLastName': $('#toLastName').val(),
         'companyName': $('#companyName').val(),
         'companyAddress': $('#companyAddress').val(),
@@ -63,22 +63,22 @@ $(document).ready(function() {
         'completedOn': $('#completed').val(),
     };
 
-    // invoiceData['total'] = invoiceData.dailyRate * invoiceData.quantity;
-    console.log(invoiceData);
+    invoiceData['total'] = invoiceData.dailyRate * invoiceData.quantity;
+    
     $('form').submit(function(event) {
         // optional
         // used delay form submission for a seccond and show a loader image
-        $("#loader").show();
-        setTimeout(function(){
-            $("#invoiceData").html('<div class="alert alert-success"><strong>Success!</strong> Your data have successfully been sent.</div>');
-        }, 1000);
+        // $("#loader").show();
+        // setTimeout(function(){
+        //     $("#invoiceData").html('<div class="alert alert-success"><strong>Success!</strong> Your data have successfully been sent.</div>');
+        // }, 1000);
         
         // Process the form
         $.ajax({
-            type: "POST",
             url: apiUrl,
-            data: invoiceData,
-            dataType: 'json'
+            type: "POST",
+            contentType: 'application/json',
+            data: JSON.stringify(invoiceData)
         }).done(function(data){
             console.log(data);
         });
