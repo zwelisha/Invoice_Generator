@@ -1,5 +1,5 @@
 
-alert("The document is ready");
+console.log("The document is ready");
    
 $('#sendDataBtn').click(function() {
     console.log("API button clicked");

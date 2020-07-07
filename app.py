@@ -8,7 +8,7 @@ def home():
 def invoice():
     return render_template('invoice.html')
 
-#  API endpoint for geeting data to send email
+#  API endpoint for getting data to send email
 @app.route('/api/send_email', methods=['POST'])
 def api_send_email():
     response = request.get_json()
