@@ -51,29 +51,29 @@ $(document).ready(function() {
 
     // var server = "http://localhost:5000";
     
-    var invoiceData = {
-        // toFirstName: $('#toFirstName').val(),
-        // toLastName: $('#toLastName').val(),
-        // companyName: $('#companyName').val(),
-        // companyAddress: $('companyAddress').val(),
-        // sentDate: $('#sentDate').val(),
-        // toEmail: $('#toEmail').val(),
-        // fromFirstName: $('#fromFirstName').val(),
-        // fromLastName: $('#fromLastName').val(),
-        // fromEmail: $('#fromEmail').val(),
-        // password: $('#password').val(),
-        // bankName: $('#bankName').val(),
-        // accNumber: $('#accNumber').val(),
-        // reference: $('#reference').val(),
-        // dailyRate: $('#dailyRate').val(),
-        // quantity: $('#quantity').val(),
-        // description: $('#description').val(),
-        // startedOn: $('#started').val(),
-        // completedOn: $('#completed').val(),
+    // var invoiceData = {
+    //     // toFirstName: $('#toFirstName').val(),
+    //     // toLastName: $('#toLastName').val(),
+    //     // companyName: $('#companyName').val(),
+    //     // companyAddress: $('companyAddress').val(),
+    //     // sentDate: $('#sentDate').val(),
+    //     // toEmail: $('#toEmail').val(),
+    //     // fromFirstName: $('#fromFirstName').val(),
+    //     // fromLastName: $('#fromLastName').val(),
+    //     // fromEmail: $('#fromEmail').val(),
+    //     // password: $('#password').val(),
+    //     // bankName: $('#bankName').val(),
+    //     // accNumber: $('#accNumber').val(),
+    //     // reference: $('#reference').val(),
+    //     // dailyRate: $('#dailyRate').val(),
+    //     // quantity: $('#quantity').val(),
+    //     // description: $('#description').val(),
+    //     // startedOn: $('#started').val(),
+    //     // completedOn: $('#completed').val(),
         
         
         
-    };
+    // };
     // Test API call
     $("#sendDataBtn").click(function() {
         var apiUrl = "/api/send_email";
@@ -97,23 +97,22 @@ $(document).ready(function() {
             startedOn: '10-06-2020',
             completedOn: '20-06-2020'
         };
-        if (validateForm.form()) {
+        
             // optional
             // used delay form submission for a seccond and show a loader image
-            $("#loader").show();
-            setTimeout(function(){
-                $("#invoiceData").html('<div class="alert alert-success"><strong>Success!</strong> Your data have successfully been sent.</div>');
-            }, 1000);
+            // $("#loader").show();
+            // setTimeout(function(){
+            //     $("#invoiceData").html('<div class="alert alert-success"><strong>Success!</strong> Your data have successfully been sent.</div>');
+            // }, 1000);
             
-            $.ajax({
-                type: "POST",
-                url: apiUrl,
-                data: JSON.stringify(invoiceData),
-                dataType: 'json'
-            }).done(function(data){
-                console.log(data);
-            });
-        }
+        $.ajax({
+            type: "POST",
+            url: apiUrl,
+            data: JSON.stringify(invoiceData),
+            dataType: 'json'
+        }).done(function(data){
+            console.log(data);
+        });
     });
 
     // invoiceData['total'] = invoiceData.dailyRate * invoiceData.quantity;
