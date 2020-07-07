@@ -11,6 +11,8 @@ def invoice():
 #  API endpoint for fetching data to send email
 @app.route('/api/send_email', methods=['POST'])
 def api_send_email():
+    if request.method == "POST":
+        data = {}
     response = request.get_json()
     print("Api got called, here is the data passed =>")
     print(response)

@@ -43,10 +43,10 @@ $(document).ready(function() {
 
     var apiUrl = "http://127.0.0.1:5000/api/send_email";
     var invoiceData = {
-        'toFirstName': $('#toFirstName').val(),
+        'toFirstName': $('input[name=tofirstname]').val(),
         'toLastName': $('#toLastName').val(),
         'companyName': $('#companyName').val(),
-        'companyAddress': $('companyAddress').val(),
+        'companyAddress': $('#companyAddress').val(),
         'sentDate': $('#sentDate').val(),
         'toEmail': $('#toEmail').val(),
         'fromFirstName': $('#fromFirstName').val(),
@@ -64,7 +64,7 @@ $(document).ready(function() {
     };
 
     // invoiceData['total'] = invoiceData.dailyRate * invoiceData.quantity;
-
+    console.log(invoiceData);
     $('form').submit(function(event) {
         // optional
         // used delay form submission for a seccond and show a loader image
@@ -78,8 +78,7 @@ $(document).ready(function() {
             type: "POST",
             url: apiUrl,
             data: invoiceData,
-            dataType: 'json',
-            encode: true
+            dataType: 'json'
         }).done(function(data){
             console.log(data);
         });
