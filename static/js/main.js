@@ -76,11 +76,12 @@ $(document).ready(function() {
     // };
     // Test API call
     $('#sendDataBtn').click(function() {
+        alert("API button clicked");
         console.log("API call button clicked");
         var apiUrl = "/api/send_email";
         console.log(apiUrl);
         var invoiceData = {
-            toFirstName: 'Adriano',
+            "toFirstName": 'Adriano',
             toLastName: 'Iorio',
             companyName: 'Turati',
             companyAddress: '123 Goku St',
